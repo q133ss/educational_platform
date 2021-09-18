@@ -83,7 +83,7 @@
                         </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="{{route('post.index')}}" class="nav-link">
                                 <p>
                                     Все видеозаписи
                                 </p>
@@ -91,7 +91,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="{{route('post.create')}}" class="nav-link">
                                 <p>
                                     Добавить видеозапись
                                 </p>
