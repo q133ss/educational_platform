@@ -5,7 +5,7 @@
                 <a href="#" class="footer__logo"><img src="img/logoGray.svg" class="footer__logo-img" alt="#"></a>
             </div>
             <div class="col-xl-5 col-lg-4">
-                <ul class="footer__menu">
+                <!-- <ul class="footer__menu">
                     <li class="footer__menu-el">
                         <a href="#" class="footer__menu-link">О проекте</a>
                     </li>
@@ -15,7 +15,7 @@
                     <li class="footer__menu-el">
                         <a href="#" class="footer__menu-link">Вакансии</a>
                     </li>
-                </ul>
+                </ul> -->
             </div>
             <div class="col-xl-5  col-lg-5">
                 <div class="footer__infoContainer">

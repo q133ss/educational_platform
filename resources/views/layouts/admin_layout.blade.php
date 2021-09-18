@@ -105,8 +105,8 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <p>
-                                <i class="nav-icon fas fa-bars"></i>
-                                Категории
+                                <i class="nav-icon fas fa-book"></i>
+                                Предметы
                                 <i class="right fas fa-angle-left"></i>
                             </p>
 
@@ -115,7 +115,7 @@
                             <li class="nav-item">
                                 <a href="{{Route('category.index')}}" class="nav-link">
                                     <p>
-                                        Все категории
+                                        Все предметы
                                     </p>
                                 </a>
                             </li>
@@ -123,7 +123,7 @@
                             <li class="nav-item">
                                 <a href="{{Route('category.create')}}" class="nav-link">
                                     <p>
-                                        Добавить категорию
+                                        Добавить предмет
                                     </p>
                                 </a>
                             </li>

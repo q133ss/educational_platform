@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Все категории</h1>
+                    <h1 class="m-0">Все предметы</h1>
                 </div><!-- /.col -->
 
             </div><!-- /.row -->
@@ -45,16 +45,20 @@
                             </td>
 
                             <td class="project-actions text-right">
-                                <a class="btn btn-info btn-sm" href="#">
+                                <a class="btn btn-info btn-sm" href="{{route('category.edit', $cat->id)}}">
                                     <i class="fas fa-pencil-alt">
                                     </i>
                                     Изменить
                                 </a>
-                                <a class="btn btn-danger btn-sm" href="#">
+                                <form action="{{route('category.destroy', $cat->id) }}" class="btn">
+                                    @csrf
+                                    @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm delete-btn" href="#">
                                     <i class="fas fa-trash">
                                     </i>
                                     Удалить
-                                </a>
+                                </button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

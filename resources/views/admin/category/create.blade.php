@@ -1,12 +1,12 @@
 @extends('layouts.admin_layout')
-@section('title_page', 'Добавить категорию')
+@section('title_page', 'Добавить предмет')
 @section('content')
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Добавить категорию</h1>
+                    <h1 class="m-0">Добавить предмет</h1>
                 </div><!-- /.col -->
 
             </div><!-- /.row -->
@@ -32,8 +32,8 @@
                        @csrf
                        <div class="card-body">
                            <div class="form-group">
-                               <label for="exampleInputEmail1">Имя</label>
-                               <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="Введите имя категории" required>
+                               <label for="exampleInputEmail1">Название</label>
+                               <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="Введите название предмета" required>
                            </div>
 
 
