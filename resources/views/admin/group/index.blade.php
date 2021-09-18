@@ -1,12 +1,12 @@
 @extends('layouts.admin_layout')
-@section('title_page', 'Все видео')
+@section('title_page', 'Список классов')
 @section('content')
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Все видео</h1>
+                    <h1 class="m-0">Список классов</h1>
                 </div><!-- /.col -->
 
             </div><!-- /.row -->
@@ -34,38 +34,31 @@
                                 Id
                             </th>
                             <th style="width: 20%">
-                                Название
+                                Номер класса
                             </th>
 
-                            <th>Категория</th>
-
-                            <th>Дата добавления</th>
 
                             <th style="width: 20%">
                             </th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($posts as $post)
+                        @foreach($groups as $group)
                             <tr>
                                 <td>
-                                    {{$post->id}}
+                                    {{$group->id}}
                                 </td>
                                 <td>
-                                    {{$post->title}}
+                                    {{$group->number}}
                                 </td>
 
-                                <td>{{$post->category['title']}}</td>
-
-                                <td>{{$post->created_at}}</td>
-
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-info btn-sm" href="{{route('post.edit', $post->id)}}">
+                                    <a class="btn btn-info btn-sm" href="{{route('group.edit', $group->id)}}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Изменить
                                     </a>
-                                    <form action="{{route('post.destroy', $post->id) }}" class="btn" method="POST">
+                                    <form action="{{route('group.destroy', $group->id) }}" class="btn" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm delete-btn" href="#">

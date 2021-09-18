@@ -24,7 +24,7 @@
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
                         <h4><i class="icon fa fa-check"></i>{{session('success')}}</h4>
                     </div>
-            @endif
+                @endif
 
             <!-- /.card-header -->
                 <!-- form start -->

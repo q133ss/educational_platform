@@ -131,6 +131,35 @@
                         </ul>
                     </li>
 
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <p>
+                                <i class="nav-icon fas fa-users"></i>
+                                Классы
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('group.index')}}" class="nav-link">
+                                    <p>
+                                        Список классов
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{route('group.create')}}" class="nav-link">
+                                    <p>
+                                        Добавить класс
+                                    </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

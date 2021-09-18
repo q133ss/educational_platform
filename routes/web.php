@@ -27,4 +27,5 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group( function(){
 
     Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
     Route::resource('post', \App\Http\Controllers\Admin\PostController::class);
+    Route::resource('group', \App\Http\Controllers\Admin\GroupController::class); //Class
 });

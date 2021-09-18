@@ -1,5 +1,5 @@
 @extends('layouts.admin_layout')
-@section('title_page', 'Добавить категорию')
+@section('title_page', 'Все предметы')
 @section('content')
     <!-- Content Header (Page header) -->
     <div class="content-header">
