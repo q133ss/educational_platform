@@ -13,11 +13,18 @@
                     </h2>
                     <div class="searchResults">
                         @foreach($video as $v)
-                            <a class="searchResults__el searchResults__el--blue" href="#">
-                                <span class="searchResults__el-title">{{$v->title}}</span>
-                                <span class="searchResults__el-class">{{$v->class_id}} класс</span>
-                            </a>
+                            @if($v->class_id == $class_num->id)
+                            @foreach($themes as $theme)
+                                @if($theme->id == $v->theme_id)
+                                    <a class="searchResults__el searchResults__el--blue" href="#">
+                                        <span class="searchResults__el-title">{{$theme->title}}</span>
+                                        <span class="searchResults__el-class">{{$class_num->number}} класс</span>
+                                    </a>
+                                @endif
+                            @endforeach
+                            @endif
                         @endforeach
+
 {{--                       --}}
 {{--                        <a class="searchResults__el searchResults__el--blue" href="#">--}}
 {{--                            <span class="searchResults__el-title">Физика - наука о природе</span>--}}

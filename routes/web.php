@@ -26,6 +26,11 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group( function(){
     Route::resource('category', \App\Http\Controllers\Admin\CategoryController::class);
     Route::resource('post', \App\Http\Controllers\Admin\PostController::class);
     Route::resource('group', \App\Http\Controllers\Admin\GroupController::class); //Class
+    Route::resource('theme', \App\Http\Controllers\Admin\ThemeController::class);
 });
 
-Route::get('/themes/{sub}/{class}','App\Http\Controllers\CategoryController@show' )->name('themes'); //Output themes on frontend
+Route::get('/subjects/{sub}/{class}','App\Http\Controllers\ThemeController@index' )->name('themes'); //Output themes on frontend
+
+
+
+Route::get('/{sub}/{id}','App\Http\Controllers\PostController@show' )->name('post'); //Output posts on frontend

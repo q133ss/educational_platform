@@ -70,6 +70,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js" integrity="sha512-wV7Yj1alIZDqZFCUQJy85VN+qvEIly93fIQAN7iqDFCPEucLCeNFz4r35FCo9s6WrpdDQPi80xbljXB8Bjtvcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>
-<script src="scripts/app.js" defer></script>
+<script src="/scripts/app.js" defer></script>
 </body>
 </html>

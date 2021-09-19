@@ -21,7 +21,7 @@ window.onload = function () {
       margin:13,
       nav:true,
       dots: true,
-      navText: ['<img src="img/icons/angleDownWhite.svg" alt="#">', '<img src="img/icons/angleDownWhite.svg" alt="#">'],
+      navText: ['<img src="/img/icons/angleDownWhite.svg" alt="#">', '<img src="/img/icons/angleDownWhite.svg" alt="#">'],
       responsive:{
           0:{
               items:2

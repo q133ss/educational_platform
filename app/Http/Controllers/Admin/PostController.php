@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Group;
 use App\Models\Post;
+use App\Models\Theme;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -32,9 +33,11 @@ class PostController extends Controller
     {
         $categories = Category::orderBy('created_at', 'DESC')->get();
         $groups = Group::orderBy('created_at', 'DESC')->get();
+        $theme = Theme::orderBy('created_at', 'DESC')->get();
         return view('admin.post.create', [
             'categories' => $categories,
-            'groups' => $groups
+            'groups' => $groups,
+            'themes' => $theme
         ]);
     }
 
@@ -51,6 +54,7 @@ class PostController extends Controller
         $post->cat_id = $request->cat_id;
         $post->class_id = $request->class_id;
         $post->video_frame = $request->video_code;
+        $post->theme_id = $request->theme_id;
 
         $post->save();
 
@@ -78,10 +82,12 @@ class PostController extends Controller
     {
         $categories = Category::orderBy('created_at', 'DESC')->get();
         $groups = Group::orderBy('created_at', 'DESC')->get();
+        $themes = Theme::orderBy('created_at', 'DESC')->get();
         return view('admin.post.edit', [
             'post' => $post,
             'categories' => $categories,
-            'groups' => $groups
+            'groups' => $groups,
+            'themes' => $themes
         ]);
     }
 
@@ -98,6 +104,7 @@ class PostController extends Controller
         $post->cat_id = $request->cat_id;
         $post->video_frame = $request->video_code;
         $post->class_id = $request->class_id;
+        $post->theme_id = $request->theme_id;
         $post->save();
         return redirect()->back()->withSuccess('Урок обновлен!');
     }

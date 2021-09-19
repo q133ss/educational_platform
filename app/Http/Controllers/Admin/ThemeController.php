@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Group;
+use App\Models\Theme;
 use Illuminate\Http\Request;
 
-class GroupController extends Controller
+class ThemeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class GroupController extends Controller
      */
     public function index()
     {
-        $groups = Group::orderBy('created_at', 'DESC')->get();
-        return view('admin.group.index', [
-            'groups' => $groups
+        $themes = Theme::orderBy('created_at', 'DESC')->get();
+        return view('admin.theme.index', [
+            'themes' => $themes
         ]);
     }
 
@@ -28,7 +28,7 @@ class GroupController extends Controller
      */
     public function create()
     {
-        return view('admin.group.create');
+        return view('admin.theme.create');
     }
 
     /**
@@ -39,20 +39,20 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        $group = new Group();
-        $group->number = $request->number;
-        $group->save();
+        $theme = new Theme();
+        $theme->title = $request->title;
+        $theme->save();
 
-        return redirect()->back()->withSuccess('Класс успешно добавлен!');
+        return redirect()->back()->withSuccess('Тема успешно добавлена!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Group  $group
+     * @param  \App\Models\Theme  $theme
      * @return \Illuminate\Http\Response
      */
-    public function show(Group $group)
+    public function show(Theme $theme)
     {
         //
     }
@@ -60,13 +60,13 @@ class GroupController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Group  $group
+     * @param  \App\Models\Theme  $theme
      * @return \Illuminate\Http\Response
      */
-    public function edit(Group $group)
+    public function edit(Theme $theme)
     {
-        return view('admin.group.edit',[
-            'group' => $group
+        return view('admin.theme.edit',[
+            'theme' => $theme
         ]);
     }
 
@@ -74,25 +74,24 @@ class GroupController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Group  $group
+     * @param  \App\Models\Theme  $theme
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Group $group)
+    public function update(Request $request, Theme $theme)
     {
-        $group->number = $request->number;
-        $group->save();
-        return redirect()->back()->withSuccess('Класс обновлен!');
+        $theme->title = $request->title;
+        $theme->save();
+        return redirect()->back()->withSuccess('Тема обновлена!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Group  $group
+     * @param  \App\Models\Theme  $theme
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Group $group)
+    public function destroy(Theme $theme)
     {
-        $group->delete();
-        return redirect()->back()->withSuccess('Класс успешно удален!');
+        //
     }
 }

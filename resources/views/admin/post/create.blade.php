@@ -45,6 +45,14 @@
                             </select>
                         </div>
 
+                        <div class="form-group">
+                            <label>Тема</label>
+                            <select class="form-control" name="theme_id">
+                                @foreach($themes as $theme)
+                                    <option value="{{$theme->id}}">{{$theme->title}}</option>
+                                @endforeach
+                            </select>
+                        </div>
 
                         <div class="form-group">
                             <label>Класс</label>

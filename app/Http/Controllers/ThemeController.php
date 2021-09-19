@@ -6,14 +6,19 @@ use App\Models\Category;
 use App\Models\Group;
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Theme;
 
-class CategoryController extends Controller
+class ThemeController extends Controller
 {
-    public function show($sub, $class)
-    {
+    public function index($sub, $class){
         $cat_id = Category::where('title', $sub)->first();
-        $video = Post::where('cat_id', $cat_id->id)->where('class_id', $class)->get();
+        $video = Post::where('cat_id', $cat_id['id'])->get();
+        $themes = Theme::get();
+
+        //class finder
+        $class_number = Group::where('number', $class)->first();
+
+      //  dd($class_number);
 
         $cat = Category::orderBy('created_at', 'DESC')->get();
         $group = Group::orderBy('number', 'ASC')->get();
@@ -21,9 +26,12 @@ class CategoryController extends Controller
         return view('themes',[
             'sub' => $sub,
             'class' => $class,
+            'cat_id' => $cat_id,
             'video' => $video,
             'categories' => $cat,
-            'groups' => $group
+            'groups' => $group,
+            'themes' => $themes,
+            'class_num' => $class_number
         ]);
     }
 }

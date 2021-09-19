@@ -437,6 +437,10 @@ body {
     width: 100%;
 }
 
+.videoBlock iframe{
+    width: 100%;
+}
+
 @media (max-width: 991px) {
   .categoryVideoMain .row {
     margin-left: -10px;
