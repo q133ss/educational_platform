@@ -18,6 +18,12 @@
     <section class="content">
         <div class="container-fluid">
             <div class="card">
+                @if(session('success'))
+                    <div class="alert alert-success" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                        <h4><i class="icon fa fa-check"></i>{{session('success')}}</h4>
+                    </div>
+                @endif
 
                 <div class="card-body p-0">
                     <table class="table table-striped projects">
@@ -50,7 +56,7 @@
                                     </i>
                                     Изменить
                                 </a>
-                                <form action="{{route('category.destroy', $cat->id) }}" class="btn">
+                                <form action="{{route('category.destroy', $cat->id) }}" class="btn" method="POST">
                                     @csrf
                                     @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm delete-btn" href="#">

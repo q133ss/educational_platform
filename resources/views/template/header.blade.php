@@ -13,7 +13,7 @@
     <link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet" />
 
 
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
 <main class="page-wrapper">
@@ -24,30 +24,30 @@
         <div class="container">
             <div class="header__wrapper">
                 <div href="#" class="header__logoContainer">
-                    <a href="#" class="header__logo"><img src="img/logo.svg" class="header__logo-img" alt="#"></a>
+                    <a href="#" class="header__logo"><img src="/img/logo.svg" class="header__logo-img" alt="#"></a>
                     <span class="header__logoText">
                   <span class="header__logoText-title">МЫ ДАРИМ ЗНАНИЯ!</span>
                   <span class="header__logoText-text">Образовательный проект</span>
                 </span>
                 </div>
-                <a href="#" class="header__banner"><img src="img/banner.png" class="header__banner-img" alt="#"></a>
+                <a href="#" class="header__banner"><img src="/img/banner.png" class="header__banner-img" alt="#"></a>
                 <div class="header__right">
                     <div class="socials">
                         <p class="socials__title">Мы в соц. сетях</p>
                         <ul class="socials__list">
                             <li class="socials__list-el">
                                 <a href="#" class="socials__list-link">
-                                    <img src="img/icons/youtube.svg" class="socials__list-img" alt="#">
+                                    <img src="/img/icons/youtube.svg" class="socials__list-img" alt="#">
                                 </a>
                             </li>
                             <li class="socials__list-el">
                                 <a href="#" class="socials__list-link">
-                                    <img src="img/icons/insta.svg" class="socials__list-img" alt="#">
+                                    <img src="/img/icons/insta.svg" class="socials__list-img" alt="#">
                                 </a>
                             </li>
                             <li class="socials__list-el">
                                 <a href="#" class="socials__list-link">
-                                    <img src="img/icons/tg.svg" class="socials__list-img" alt="#">
+                                    <img src="/img/icons/tg.svg" class="socials__list-img" alt="#">
                                 </a>
                             </li>
                         </ul>
@@ -90,6 +90,23 @@
         <div class="container">
             <button class="categoriesList__toggle" type="button"></button>
             <div class="categoriesList__inner">
+
+                @foreach($categories as $cat)
+                <div class="categoriesList__el categoriesList__el--turquoise categoriesList__el--biology">
+                    <div class="dropdown">
+                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="dropdown__toggle-title">{{$cat->title}}</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            @foreach($groups as $group)
+                            <a class="dropdown-item active" href="{{route('themes', [$cat->title, $group->number])}}">{{$group->number}} класс</a>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+
+
                 <div class="categoriesList__el categoriesList__el--turquoise categoriesList__el--biology">
                     <div class="dropdown">
                         <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -183,17 +200,17 @@
                     <ul class="socials__list">
                         <li class="socials__list-el">
                             <a href="#" class="socials__list-link">
-                                <img src="img/icons/youtube.svg" class="socials__list-img" alt="#">
+                                <img src="/img/icons/youtube.svg" class="socials__list-img" alt="#">
                             </a>
                         </li>
                         <li class="socials__list-el">
                             <a href="#" class="socials__list-link">
-                                <img src="img/icons/insta.svg" class="socials__list-img" alt="#">
+                                <img src="/img/icons/insta.svg" class="socials__list-img" alt="#">
                             </a>
                         </li>
                         <li class="socials__list-el">
                             <a href="#" class="socials__list-link">
-                                <img src="img/icons/tg.svg" class="socials__list-img" alt="#">
+                                <img src="/img/icons/tg.svg" class="socials__list-img" alt="#">
                             </a>
                         </li>
                     </ul>

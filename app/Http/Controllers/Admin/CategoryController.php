@@ -42,6 +42,8 @@ class CategoryController extends Controller
         $new_category = new Category();
         $new_category->title = $request->title;
         $new_category->video_code = $request->video_code;
+        $path = $request->file('picture')->store('uploads', 'public');
+        $new_category->picture = '/storage/'.$path;
         $new_category->save();
 
         return redirect()->back()->withSuccess('Предмет успешно добавлен!');

@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'App\Http\Controllers\IndexController@index');
 
 Auth::routes();
 
@@ -29,3 +27,5 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group( function(){
     Route::resource('post', \App\Http\Controllers\Admin\PostController::class);
     Route::resource('group', \App\Http\Controllers\Admin\GroupController::class); //Class
 });
+
+Route::get('/themes/{sub}/{class}','App\Http\Controllers\CategoryController@show' )->name('themes'); //Output themes on frontend

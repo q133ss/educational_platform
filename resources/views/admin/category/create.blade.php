@@ -28,12 +28,20 @@
 
                    <!-- /.card-header -->
                    <!-- form start -->
-                   <form action="{{route('category.store')}}" method="POST">
+                   <form action="{{route('category.store')}}" method="POST" enctype="multipart/form-data">
                        @csrf
                        <div class="card-body">
                            <div class="form-group">
                                <label for="exampleInputEmail1">Название</label>
                                <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="Введите название предмета" required>
+                           </div>
+
+                           <div class="form-group">
+                               <!-- <label for="customFile">Custom File</label> -->
+                               <strong>Изображение</strong>
+                               <div class="custom-file mt-2">
+                                   <input type="file" name="picture">
+                               </div>
                            </div>
 
                            <div class="form-group">

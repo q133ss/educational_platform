@@ -433,6 +433,10 @@ body {
   font-weight: 700;
 }
 
+.modal-body iframe{
+    width: 100%;
+}
+
 @media (max-width: 991px) {
   .categoryVideoMain .row {
     margin-left: -10px;
@@ -841,7 +845,7 @@ body {
   height: 20px;
   display: flex;
   /*&:link {
-        
+
         span {
           background: $black;
         }

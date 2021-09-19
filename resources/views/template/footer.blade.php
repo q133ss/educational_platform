@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-1 col-lg-1">
-                <a href="#" class="footer__logo"><img src="img/logoGray.svg" class="footer__logo-img" alt="#"></a>
+                <a href="#" class="footer__logo"><img src="/img/logoGray.svg" class="footer__logo-img" alt="#"></a>
             </div>
             <div class="col-xl-5 col-lg-4">
                 <!-- <ul class="footer__menu">
@@ -41,17 +41,17 @@
                     <ul class="socials__list">
                         <li class="socials__list-el">
                             <a href="#" class="socials__list-link">
-                                <img src="img/icons/youtube.svg" class="socials__list-img" alt="#">
+                                <img src="/img/icons/youtube.svg" class="socials__list-img" alt="#">
                             </a>
                         </li>
                         <li class="socials__list-el">
                             <a href="#" class="socials__list-link">
-                                <img src="img/icons/insta.svg" class="socials__list-img" alt="#">
+                                <img src="/img/icons/insta.svg" class="socials__list-img" alt="#">
                             </a>
                         </li>
                         <li class="socials__list-el">
                             <a href="#" class="socials__list-link">
-                                <img src="img/icons/tg.svg" class="socials__list-img" alt="#">
+                                <img src="/img/icons/tg.svg" class="socials__list-img" alt="#">
                             </a>
                         </li>
                     </ul>

@@ -68,6 +68,7 @@
                                     <form action="{{route('post.destroy', $post->id) }}" class="btn" method="POST">
                                         @csrf
                                         @method('DELETE')
+                                        <input type="hidden" name="_method" value="delete" />
                                         <button type="submit" class="btn btn-danger btn-sm delete-btn" href="#">
                                             <i class="fas fa-trash">
                                             </i>
