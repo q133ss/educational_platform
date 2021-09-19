@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Group;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
@@ -30,8 +31,10 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::orderBy('created_at', 'DESC')->get();
+        $groups = Group::orderBy('created_at', 'DESC')->get();
         return view('admin.post.create', [
-            'categories' => $categories
+            'categories' => $categories,
+            'groups' => $groups
         ]);
     }
 
@@ -46,6 +49,7 @@ class PostController extends Controller
         $post = new Post();
         $post->title = $request->title;
         $post->cat_id = $request->cat_id;
+        $post->class_id = $request->class_id;
         $post->video_frame = $request->video_code;
 
         $post->save();
@@ -73,9 +77,11 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $categories = Category::orderBy('created_at', 'DESC')->get();
+        $groups = Group::orderBy('created_at', 'DESC')->get();
         return view('admin.post.edit', [
             'post' => $post,
-            'categories' => $categories
+            'categories' => $categories,
+            'groups' => $groups
         ]);
     }
 
@@ -91,6 +97,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->cat_id = $request->cat_id;
         $post->video_frame = $request->video_code;
+        $post->class_id = $request->class_id;
         $post->save();
         return redirect()->back()->withSuccess('Урок обновлен!');
     }

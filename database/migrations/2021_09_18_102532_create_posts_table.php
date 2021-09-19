@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->text('video_frame');
             $table->bigInteger('cat_id')->unsigned();
+            $table->bigInteger('class_id')->unsigned();
             $table->timestamps();
         });
     }

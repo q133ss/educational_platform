@@ -36,8 +36,14 @@
                                <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="Введите название предмета" required>
                            </div>
 
+                           <div class="form-group">
+                               <label>Код видео</label>
+                               <textarea class="form-control" rows="3" name="video_code" placeholder='<iframe width="560" height="315" src="https://www.youtube.com/embed/FrjD5CZ4a88" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' required></textarea>
+                           </div>
 
-                       <div class="card-footer">
+
+
+                           <div class="card-footer">
                            <button type="submit" class="btn btn-primary">Добавить</button>
                        </div>
                    </form>

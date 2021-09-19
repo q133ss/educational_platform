@@ -41,6 +41,7 @@ class CategoryController extends Controller
     {
         $new_category = new Category();
         $new_category->title = $request->title;
+        $new_category->video_code = $request->video_code;
         $new_category->save();
 
         return redirect()->back()->withSuccess('Предмет успешно добавлен!');
@@ -80,6 +81,7 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $category->title = $request->title;
+        $category->video_code = $request->video_code;
         $category->save();
         return redirect()->back()->withSuccess('Предмет обновлен!');
     }

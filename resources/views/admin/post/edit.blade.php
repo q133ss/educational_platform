@@ -47,6 +47,15 @@
                         </div>
 
                         <div class="form-group">
+                            <label>Класс</label>
+                            <select class="form-control" name="class_id">
+                                @foreach($groups as $group)
+                                    <option value="{{$group->id}}"  @if($group['id'] == $post['class_id']) selected @endif>{{$group->number}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             <label>Код видео</label>
                             <textarea class="form-control" rows="3" name="video_code" placeholder='<iframe width="560" height="315" src="https://www.youtube.com/embed/FrjD5CZ4a88" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' required>{{$post->video_frame}}</textarea>
                         </div>
