@@ -33,4 +33,4 @@ Route::get('/subjects/{sub}/{class}','App\Http\Controllers\ThemeController@index
 
 
 
-Route::get('/{sub}/{id}','App\Http\Controllers\PostController@show' )->name('post'); //Output posts on frontend
+Route::get('/theme/{class}/{theme_id}/','App\Http\Controllers\CatalogController@index' )->name('catalog'); //Output posts on frontend

@@ -36,6 +36,24 @@
                             <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="Введите название темы" required>
                         </div>
 
+                        <div class="form-group">
+                            <label>Для какого предмета</label>
+                            <select class="form-control" name="cat_id">
+                                @foreach($categories as $cat)
+                                    <option value="{{$cat->id}}">{{$cat->title}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Для какого класса</label>
+                            <select class="form-control" name="class_id">
+                                @foreach($classes as $class)
+                                    <option value="{{$class->id}}">{{$class->number}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Добавить</button>
                         </div>

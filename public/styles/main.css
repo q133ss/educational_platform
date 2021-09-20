@@ -441,6 +441,11 @@ body {
     width: 100%;
 }
 
+.categoryVideo__imgContainer iframe{
+    height: 100%;
+    width: 100%;
+}
+
 @media (max-width: 991px) {
   .categoryVideoMain .row {
     margin-left: -10px;

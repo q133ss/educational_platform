@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Group;
 use App\Models\Theme;
 use Illuminate\Http\Request;
 
@@ -28,7 +30,12 @@ class ThemeController extends Controller
      */
     public function create()
     {
-        return view('admin.theme.create');
+        $categories = Category::orderBy('created_at', 'DESC')->get();
+        $classes = Group::orderBy('created_at', 'DESC')->get();
+        return view('admin.theme.create',[
+            'categories' => $categories,
+            'classes' => $classes
+        ]);
     }
 
     /**
@@ -41,6 +48,9 @@ class ThemeController extends Controller
     {
         $theme = new Theme();
         $theme->title = $request->title;
+        $theme->cat_id = $request->cat_id;
+        $theme->class_id = $request->class_id;
+
         $theme->save();
 
         return redirect()->back()->withSuccess('Тема успешно добавлена!');
@@ -65,8 +75,12 @@ class ThemeController extends Controller
      */
     public function edit(Theme $theme)
     {
+        $categories = Category::orderBy('created_at', 'DESC')->get();
+        $classes = Group::orderBy('created_at', 'DESC')->get();
         return view('admin.theme.edit',[
-            'theme' => $theme
+            'theme' => $theme,
+            'categories' => $categories,
+            'classes' => $classes
         ]);
     }
 
@@ -80,6 +94,8 @@ class ThemeController extends Controller
     public function update(Request $request, Theme $theme)
     {
         $theme->title = $request->title;
+        $theme->cat_id = $request->cat_id;
+        $theme->class_id = $request->class_id;
         $theme->save();
         return redirect()->back()->withSuccess('Тема обновлена!');
     }
