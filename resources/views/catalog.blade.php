@@ -20,7 +20,6 @@
                         @foreach($videos as $video)
                             {!! $video->video_frame !!}
 
-                        { {$main_video->title}}
 {{--                        <video--}}
 {{--                            id="my-video"--}}
 {{--                            class="video-js"--}}

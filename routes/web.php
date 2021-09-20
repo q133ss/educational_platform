@@ -31,6 +31,4 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group( function(){
 
 Route::get('/subjects/{sub}/{class}','App\Http\Controllers\ThemeController@index' )->name('themes'); //Output themes on frontend
 
-
-
 Route::get('/theme/{class}/{theme_id}/','App\Http\Controllers\CatalogController@index' )->name('catalog'); //Output posts on frontend

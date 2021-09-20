@@ -18,33 +18,19 @@
                                 <span class="searchResults__el-class">{{$theme->class}} класс</span>
                             </a>
                         @endforeach
-
                     </div>
-                    <div class="paginationList">
-                        <a href="#" class="paginationList__el paginationList__el--prev disabled"></a>
-                        <a href="#" class="paginationList__el paginationList__el--number active">1</a>
-                        <a href="#" class="paginationList__el paginationList__el--number">2</a>
-                        <a href="#" class="paginationList__el paginationList__el--number">3</a>
-                        <a href="#" class="paginationList__el paginationList__el--number d-sm-flex d-none">4</a>
-                        <a href="#" class="paginationList__el paginationList__el--number d-sm-flex d-none">5</a>
-                        <a href="#" class="paginationList__el paginationList__el--number d-md-flex d-none">6</a>
-                        <a href="#" class="paginationList__el paginationList__el--number d-md-flex d-none">7</a>
-                        <a href="#" class="paginationList__el paginationList__el--number d-md-flex d-none">8</a>
-                        <a href="#" class="paginationList__el paginationList__el--dots d-sm-flex d-none">...</a>
-
-                        <a href="#" class="paginationList__el paginationList__el--number d-sm-flex d-none">37</a>
-                        <a href="#" class="paginationList__el paginationList__el--next"></a>
-                    </div>
+                    {{ $themes->links('pagination.index') }}
+{{--                    There are been pagination--}}
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6">
                     <div class="categoryVideo categoryVideo--blue categoryVideo--medium">
                         <a href="#" class="categoryVideo__imgContainer">
 {{--                            <img src="/img/maths.jpg" class="categoryVideo__img" alt="#">--}}
                             <span class="categoryVideo__play"></span>
-                            {!! $video->video_frame !!}
+                            {!! $video['video_frame'] !!}
                             <span class="categoryVideo__class">{{$class}}</span>
                         </a>
-                        <h3 class="categoryVideo__title"><a href="#" class="categoryVideo__title-link">{{$video->title}}</a></h3>
+                        <h3 class="categoryVideo__title"><a href="#" class="categoryVideo__title-link">{{$video['title']}}</a></h3>
                     </div>
                 </div>
             </div>
