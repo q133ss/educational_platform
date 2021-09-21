@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Gulp-based Template for HTML, CSS, Sass, and ES6 JS</title>
+    <title>@yield('title_page')</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,9 +71,9 @@
             </div>
 
 
-            <form class="searchForm" action="#">
+            <form class="searchForm" action="{{route('search')}}" method="GET">
                 <button type="submit" class="searchForm__button"></button>
-                <input type="text" class="searchForm__input" placeholder="Поиск уроков..." required>
+                <input type="text" id="s" name="search" class="searchForm__input" placeholder="Поиск уроков..." required>
             </form>
             <button class="catalogToggle" type="button">
               <span class="catalogToggle__bar">
