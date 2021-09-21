@@ -164,7 +164,7 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <p>
-                                <i class="nav-icon fas fa-users"></i>
+                                <i class="nav-icon fas fa-paragraph"></i>
                                 Темы
                                 <i class="right fas fa-angle-left"></i>
                             </p>
@@ -183,6 +183,36 @@
                                 <a href="{{route('theme.create')}}" class="nav-link">
                                     <p>
                                         Добавить тему
+                                    </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <p>
+                                <i class="nav-icon fas fa-edit"></i>
+                                Контент
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('header_index')}}" class="nav-link">
+                                    <p>
+                                        Шапка
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{route('theme.create')}}" class="nav-link">
+                                    <p>
+                                        Футер
                                     </p>
                                 </a>
                             </li>

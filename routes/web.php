@@ -29,6 +29,9 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group( function(){
     Route::resource('post', \App\Http\Controllers\Admin\PostController::class);
     Route::resource('group', \App\Http\Controllers\Admin\GroupController::class); //Class
     Route::resource('theme', \App\Http\Controllers\Admin\ThemeController::class);
+
+    Route::get('/content/header', 'App\Http\Controllers\Admin\Content\HeaderController@header_index')->name('header_index');
+    Route::post('/content/header/update', 'App\Http\Controllers\Admin\Content\HeaderController@header_update')->name('header_update');
 });
 
 Route::get('/subjects/{sub}/{class}','App\Http\Controllers\ThemeController@index' )->name('themes'); //Output themes on frontend
