@@ -14,7 +14,7 @@ class ThemeController extends Controller
         $cat = Category::where('title', $sub)->first();
         $class_id = Group::where('number', $class)->first();
 
-        $themes = Theme::where('cat_id', $cat->id)->where('class_id', $class_id->id)->paginate(1);
+        $themes = Theme::where('cat_id', $cat->id)->where('class_id', $class_id->id)->paginate(10);
         $video = Post::where('cat_id', $cat->id)->inRandomOrder()->first(); //Random video
 
         //For header

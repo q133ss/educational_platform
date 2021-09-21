@@ -12,6 +12,9 @@
               </span>
                     </h2>
                     <div class="searchResults">
+                        @if(count($themes) == 0)
+                            <p>Тем не найдено</p>
+                        @endif
                         @foreach($themes as $theme)
                             <a class="searchResults__el searchResults__el--blue" href="{{route('catalog', [$class, $theme->id])}}">
                                 <span class="searchResults__el-title">{{$theme->title}}</span>
@@ -19,7 +22,9 @@
                             </a>
                         @endforeach
                     </div>
+                    @if(count($themes) > 0)
                     {{ $themes->links('pagination.index') }}
+                    @endif
 {{--                    There are been pagination--}}
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6">

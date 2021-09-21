@@ -73,7 +73,7 @@
 
             <form class="searchForm" action="{{route('search')}}" method="GET">
                 <button type="submit" class="searchForm__button"></button>
-                <input type="text" id="s" name="search" class="searchForm__input" placeholder="Поиск уроков..." required>
+                <input type="text" id="s" @if(isset(request()->search)) value="{{request()->search}}" @endif name="search" class="searchForm__input" placeholder="Поиск уроков..." required>
             </form>
             <button class="catalogToggle" type="button">
               <span class="catalogToggle__bar">
@@ -107,81 +107,81 @@
                 @endforeach
 
 
-                <div class="categoriesList__el categoriesList__el--turquoise categoriesList__el--biology">
-                    <div class="dropdown">
-                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="dropdown__toggle-title">Биология</span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item active" href="#">7 класс</a>
-                            <a class="dropdown-item" href="#">8 класс</a>
-                            <a class="dropdown-item" href="#">9 класс</a>
-                            <a class="dropdown-item" href="#">10 класс</a>
-                            <a class="dropdown-item" href="#">11 класс</a>
-                            <a class="dropdown-item" href="#">12 класс</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="categoriesList__el  categoriesList__el--red categoriesList__el--maths">
-                    <div class="dropdown">
-                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="dropdown__toggle-title">Математика</span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">7 класс</a>
-                            <a class="dropdown-item" href="#">8 класс</a>
-                            <a class="dropdown-item" href="#">9 класс</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="categoriesList__el categoriesList__el--violet categoriesList__el--chemistry">
-                    <div class="dropdown">
-                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="dropdown__toggle-title">Химия</span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">7 класс</a>
-                            <a class="dropdown-item" href="#">8 класс</a>
-                            <a class="dropdown-item" href="#">9 класс</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="categoriesList__el  categoriesList__el--blue categoriesList__el--physics">
-                    <div class="dropdown">
-                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="dropdown__toggle-title">Физика</span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">7 класс</a>
-                            <a class="dropdown-item" href="#">8 класс</a>
-                            <a class="dropdown-item" href="#">9 класс</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="categoriesList__el categoriesList__el--pink categoriesList__el--algebra">
-                    <div class="dropdown">
-                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="dropdown__toggle-title">Алгебра</span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">7 класс</a>
-                            <a class="dropdown-item" href="#">8 класс</a>
-                            <a class="dropdown-item" href="#">9 класс</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="categoriesList__el  categoriesList__el--orange categoriesList__el--geometry">
-                    <div class="dropdown">
-                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="dropdown__toggle-title">Геометрия</span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">7 класс</a>
-                            <a class="dropdown-item" href="#">8 класс</a>
-                            <a class="dropdown-item" href="#">9 класс</a>
-                        </div>
-                    </div>
-                </div>
+{{--                <div class="categoriesList__el categoriesList__el--turquoise categoriesList__el--biology">--}}
+{{--                    <div class="dropdown">--}}
+{{--                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                            <span class="dropdown__toggle-title">Биология</span>--}}
+{{--                        </button>--}}
+{{--                        <div class="dropdown-menu">--}}
+{{--                            <a class="dropdown-item active" href="#">7 класс</a>--}}
+{{--                            <a class="dropdown-item" href="#">8 класс</a>--}}
+{{--                            <a class="dropdown-item" href="#">9 класс</a>--}}
+{{--                            <a class="dropdown-item" href="#">10 класс</a>--}}
+{{--                            <a class="dropdown-item" href="#">11 класс</a>--}}
+{{--                            <a class="dropdown-item" href="#">12 класс</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="categoriesList__el  categoriesList__el--red categoriesList__el--maths">--}}
+{{--                    <div class="dropdown">--}}
+{{--                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                            <span class="dropdown__toggle-title">Математика</span>--}}
+{{--                        </button>--}}
+{{--                        <div class="dropdown-menu">--}}
+{{--                            <a class="dropdown-item" href="#">7 класс</a>--}}
+{{--                            <a class="dropdown-item" href="#">8 класс</a>--}}
+{{--                            <a class="dropdown-item" href="#">9 класс</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="categoriesList__el categoriesList__el--violet categoriesList__el--chemistry">--}}
+{{--                    <div class="dropdown">--}}
+{{--                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                            <span class="dropdown__toggle-title">Химия</span>--}}
+{{--                        </button>--}}
+{{--                        <div class="dropdown-menu">--}}
+{{--                            <a class="dropdown-item" href="#">7 класс</a>--}}
+{{--                            <a class="dropdown-item" href="#">8 класс</a>--}}
+{{--                            <a class="dropdown-item" href="#">9 класс</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="categoriesList__el  categoriesList__el--blue categoriesList__el--physics">--}}
+{{--                    <div class="dropdown">--}}
+{{--                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                            <span class="dropdown__toggle-title">Физика</span>--}}
+{{--                        </button>--}}
+{{--                        <div class="dropdown-menu">--}}
+{{--                            <a class="dropdown-item" href="#">7 класс</a>--}}
+{{--                            <a class="dropdown-item" href="#">8 класс</a>--}}
+{{--                            <a class="dropdown-item" href="#">9 класс</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="categoriesList__el categoriesList__el--pink categoriesList__el--algebra">--}}
+{{--                    <div class="dropdown">--}}
+{{--                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                            <span class="dropdown__toggle-title">Алгебра</span>--}}
+{{--                        </button>--}}
+{{--                        <div class="dropdown-menu">--}}
+{{--                            <a class="dropdown-item" href="#">7 класс</a>--}}
+{{--                            <a class="dropdown-item" href="#">8 класс</a>--}}
+{{--                            <a class="dropdown-item" href="#">9 класс</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="categoriesList__el  categoriesList__el--orange categoriesList__el--geometry">--}}
+{{--                    <div class="dropdown">--}}
+{{--                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                            <span class="dropdown__toggle-title">Геометрия</span>--}}
+{{--                        </button>--}}
+{{--                        <div class="dropdown-menu">--}}
+{{--                            <a class="dropdown-item" href="#">7 класс</a>--}}
+{{--                            <a class="dropdown-item" href="#">8 класс</a>--}}
+{{--                            <a class="dropdown-item" href="#">9 класс</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
 
             <div class="categoriesList__submenu">

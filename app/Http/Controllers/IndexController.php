@@ -29,6 +29,9 @@ class IndexController extends Controller
 
         $videos = Post::filter($filter)->paginate(10);
 
+        $class_num = Group::where('id', $req->class_id)->first();
+        $cat_title = Category::where('id', $req->category_id)->first();
+
         $cat = Category::orderBy('created_at', 'DESC')->get();
         $group = Group::orderBy('number', 'ASC')->get();
 
@@ -37,7 +40,9 @@ class IndexController extends Controller
             'filter' => $filter,
             'categories' => $cat,
             'groups' => $group,
-            'req' => $req
+            'req' => $req,
+            'class_num' => $class_num,
+            'cat_title' => $cat_title
         ]);
     }
 }

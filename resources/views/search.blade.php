@@ -11,7 +11,7 @@
                         <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">По классам</button>
                         <div class="dropdown-menu">
                             @foreach($groups as $group)
-                            <span class="dropdown-item" onclick="get_class({{$group->id}})">{{$group->number}} класс</span>
+                            <span class="dropdown-item @if($req->class_id == $group->id) active @endif" onclick="get_class({{$group->id}})">{{$group->number}} класс</span>
                             @endforeach
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                         <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">По предметам</button>
                         <div class="dropdown-menu text-center">
                             @foreach($categories as $category)
-                            <span class="dropdown-item" onclick="get_category({{$category->id}})">{{$category->title}}</span>
+                            <span class="dropdown-item @if($req->category_id == $category->id) active @endif" onclick="get_category({{$category->id}})">{{$category->title}}</span>
                             @endforeach
                         </div>
                     </div>
@@ -31,10 +31,14 @@
             </div>
             <div class="col-12">
                 <h2 class="pageTitle" onclick="filter()">
-                    Результаты поиска: 1111
+                    Результаты поиска: {{$req->search}}
                     <span class="pageTitle__additional">
-                <span class="pageTitle__additional-el">6 класс</span>
-                <span class="pageTitle__additional-el">Биология</span>
+                        @if(isset($req->class_id))
+                <span class="pageTitle__additional-el">{{$class_num['number']}} класс</span>
+                        @endif
+                        @if(isset($req->category_id))
+                <span class="pageTitle__additional-el">{{$cat_title['title']}}</span>
+                        @endif
               </span>
                 </h2>
                 <div class="searchResults">
@@ -73,7 +77,7 @@
     }
 
     function video_filter(){
-        url = '?class_id='+$class+'&category_id='+$cat;
+        url = '{{url()->full()}}?&class_id='+$class+'&category_id='+$cat;
         //$('.searchPage').remove();
         $('.searchPage').load(url+' .searchPage');
     }
