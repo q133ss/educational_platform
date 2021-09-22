@@ -7,6 +7,7 @@ use App\Models\Group;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Theme;
 
 class IndexController extends Controller
 {
@@ -29,6 +30,8 @@ class IndexController extends Controller
 
         $videos = Post::filter($filter)->paginate(10);
 
+        $themes = Theme::get();
+
         $class_num = Group::where('id', $req->class_id)->first();
         $cat_title = Category::where('id', $req->category_id)->first();
 
@@ -42,7 +45,8 @@ class IndexController extends Controller
             'groups' => $group,
             'req' => $req,
             'class_num' => $class_num,
-            'cat_title' => $cat_title
+            'cat_title' => $cat_title,
+            'themes' => $themes
         ]);
     }
 }

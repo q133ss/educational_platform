@@ -16,10 +16,14 @@
                             <p>Тем не найдено</p>
                         @endif
                         @foreach($themes as $theme)
+                            @foreach($groups as $group)
+                                @if($group->id == $theme->class_id)
                             <a class="searchResults__el searchResults__el--blue" href="{{route('catalog', [$class, $theme->id])}}">
                                 <span class="searchResults__el-title">{{$theme->title}}</span>
-                                <span class="searchResults__el-class">{{$theme->class}} класс</span>
+                                <span class="searchResults__el-class">{{$group->number}} класс</span>
                             </a>
+                                    @endif
+                                @endforeach
                         @endforeach
                     </div>
                     @if(count($themes) > 0)
@@ -28,15 +32,25 @@
 {{--                    There are been pagination--}}
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6">
+                    @if(count($themes) > 0)
                     <div class="categoryVideo categoryVideo--blue categoryVideo--medium">
-                        <a href="#" class="categoryVideo__imgContainer">
+                        @foreach($themes as $theme)
+                            @if($theme->id == $video['theme_id'])
+                        <a href="{{route('video', [$class, $theme->title, $video['id']])}}" class="categoryVideo__imgContainer">
+                            @endif
+                            @endforeach
 {{--                            <img src="/img/maths.jpg" class="categoryVideo__img" alt="#">--}}
                             <span class="categoryVideo__play"></span>
                             {!! $video['video_frame'] !!}
                             <span class="categoryVideo__class">{{$class}}</span>
                         </a>
-                        <h3 class="categoryVideo__title"><a href="#" class="categoryVideo__title-link">{{$video['title']}}</a></h3>
+                        @foreach($themes as $theme)
+                            @if($theme->id == $video['theme_id'])
+                        <h3 class="categoryVideo__title"><a href="{{route('video', [$class, $theme->title, $video['id']])}}" class="categoryVideo__title-link">{{$video['title']}}</a></h3>
+                        @endif
+                        @endforeach
                     </div>
+                        @endif
                 </div>
             </div>
         </div>

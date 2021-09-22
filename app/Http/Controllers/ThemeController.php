@@ -30,4 +30,22 @@ class ThemeController extends Controller
             'video' => $video
         ]);
     }
+
+    public function category($sub){
+        $groups = Group::paginate(10);
+
+        $cat = Category::where('title', $sub)->first();
+        $video = Post::where('cat_id', $cat->id)->inRandomOrder()->first();
+
+        $themes = Theme::get();
+
+        $categories = Category::get();
+        return view('category',[
+            'categories' => $categories,
+            'sub' => $sub,
+            'groups' => $groups,
+            'video' => $video,
+            'themes' => $themes
+        ]);
+    }
 }

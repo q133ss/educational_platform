@@ -35,5 +35,7 @@ Route::middleware(['role:admin'])->prefix('admin_panel')->group( function(){
 });
 
 Route::get('/subjects/{sub}/{class}','App\Http\Controllers\ThemeController@index' )->name('themes'); //Output themes on frontend
+Route::get('/subjects/{sub}/','App\Http\Controllers\ThemeController@category' )->name('category'); //Output themes on frontend
 
 Route::get('/theme/{class}/{theme_id}/','App\Http\Controllers\CatalogController@index' )->name('catalog'); //Output posts on frontend
+Route::get('/theme/{class}/{theme_id}/{video_id}','App\Http\Controllers\CatalogController@theme_video' )->name('video'); //Separate video

@@ -44,10 +44,18 @@
                 <div class="searchResults">
                     @if(count($posts))
                     @foreach($posts as $post)
-                    <a class="searchResults__el searchResults__el--turquoise" href="#">
+                        @foreach($themes as $theme)
+                            @if($theme->id == $post->theme_id)
+                                @foreach($groups as $group)
+                                    @if($group->id == $post->class_id)
+                    <a class="searchResults__el searchResults__el--turquoise" href="{{route('video', [$group->number, $theme->title, $post->id])}}">
                         <span class="searchResults__el-title">{{$post->title}}</span>
                         <span class="searchResults__el-class">{{$post->class_id}} НЕПРАВИЛЬНО!!! класс</span>
                     </a>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            @endforeach
                     @endforeach
                         {{$posts->withQueryString()->links('pagination.index')}}
                     @else

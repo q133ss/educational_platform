@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-1 col-lg-1">
-                <a href="#" class="footer__logo"><img src="/img/logoGray.svg" class="footer__logo-img" alt="#"></a>
+                <a href="/" class="footer__logo"><img src="/img/logoGray.svg" class="footer__logo-img" alt="#"></a>
             </div>
             <div class="col-xl-5 col-lg-4">
                 <!-- <ul class="footer__menu">
@@ -26,12 +26,12 @@
                         </div>
                     </div>
                     <div class="footer__info">
-                        <h5 class="footer__info-title">Служба поддержки</h5>
+                        <h5 class="footer__info-title">Для ВОПРОСОВ и ПРЕДЛОЖЕНИЙ</h5>
                         <div class="footer__info-body">
                             <a href="tel:+77273455456" class="footer__info-el">
-                                +7 (727) 345 54 56
+                                +7 701 302 78 94
                             </a>
-                            <a href="mailto:name@name.kz" class="footer__info-el">name@name.kz</a>
+                            <a href="mailto:mektep.online.official@gmail.com" class="footer__info-el">mektep.online.official@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -40,18 +40,23 @@
                 <div class="socials">
                     <ul class="socials__list">
                         <li class="socials__list-el">
-                            <a href="#" class="socials__list-link">
-                                <img src="/img/icons/youtube.svg" class="socials__list-img" alt="#">
-                            </a>
-                        </li>
-                        <li class="socials__list-el">
-                            <a href="#" class="socials__list-link">
+                            <a href="https://www.instagram.com/mektep_online_kz/?hl=ru" target="_blank" class="socials__list-link">
                                 <img src="/img/icons/insta.svg" class="socials__list-img" alt="#">
                             </a>
                         </li>
                         <li class="socials__list-el">
-                            <a href="#" class="socials__list-link">
-                                <img src="/img/icons/tg.svg" class="socials__list-img" alt="#">
+                            <a href="https://www.facebook.com/Mektep-OnLine-105124131072854/?modal=admin_todo_tour&_rdc=1&_rdr" target="_blank" class="socials__list-link">
+                                <img src="/img/icons/facebook.svg" class="socials__list-img" alt="#">
+                            </a>
+                        </li>
+                        <li class="socials__list-el">
+                            <a href="https://vk.com/public191962382" target="_blank" class="socials__list-link">
+                                <img src="/img/icons/vk.svg" class="socials__list-img" alt="#">
+                            </a>
+                        </li>
+                        <li class="socials__list-el">
+                            <a href="https://tiktok.com/@mektep_online_kz" target="_blank" class="socials__list-link">
+                                <img src="/img/icons/tt.svg" class="socials__list-img" alt="#">
                             </a>
                         </li>
                     </ul>

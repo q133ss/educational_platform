@@ -1,5 +1,7 @@
 @extends('layouts.main_layout')
-@section('title_page', '21312321321')
+@section('title_page')
+    {{$theme->title}}
+@endsection
 
 @section('content')
     <section class="catalogPage">
@@ -19,27 +21,6 @@
 
                         @foreach($videos as $video)
                             {!! $video->video_frame !!}
-
-{{--                        <video--}}
-{{--                            id="my-video"--}}
-{{--                            class="video-js"--}}
-{{--                            controls--}}
-{{--                            preload="auto"--}}
-{{--                            poster="/img/physics2.jpg"--}}
-{{--                            data-setup="{}"--}}
-
-{{--                        >--}}
-{{--                            <source src="https://youtu.be/nUP6EcgkpZ4" type="video/mp4" />--}}
-
-{{--                            <p class="vjs-no-js">--}}
-{{--                                To view this video please enable JavaScript, and consider upgrading to a--}}
-{{--                                web browser that--}}
-{{--                                <a href="https://videojs.com/html5-video-support/" target="_blank"--}}
-{{--                                >supports HTML5 video</a--}}
-{{--                                >--}}
-{{--                            </p>--}}
-{{--                        </video>--}}
-{{--                        <div class="videoBlock__time">1:23</div>--}}
                         <div class="videoBlock__text">{{$video->title}}</div>
                             @break
                         @endforeach
@@ -48,13 +29,18 @@
                     <div class="owl-carousel catalogCarousel">
                         @foreach($videos as $video)
                             <div class="categoryVideo categoryVideo--blue categoryVideo--small">
-                                <a href="#" class="categoryVideo__imgContainer">
-{{--                                    <img src="/img/maths.jpg" class="categoryVideo__img" alt="#">--}}
+                                <a href="{{route('video', [$class, $theme->title, $video->id])}}" class="categoryVideo__imgContainer">
                                     {!! $video->video_frame !!}
                                     <span class="categoryVideo__play"></span>
-                                    <span class="categoryVideo__class">7</span>
+                                    <span class="categoryVideo__class">
+                                        @foreach($groups as $group)
+                                            @if($group['id'] == $video['class_id'])
+                                                {{$group['number']}}
+                                            @endif
+                                        @endforeach
+                                    </span>
                                 </a>
-                                <h3 class="categoryVideo__title"><a href="#" class="categoryVideo__title-link">{{$video->title}}</a></h3>
+                                <h3 class="categoryVideo__title"><a href="{{route('video', [$class, $theme->title, $video->id])}}" class="categoryVideo__title-link">{{$video->title}}</a></h3>
                             </div>
                         @endforeach
 
@@ -65,13 +51,18 @@
                         @foreach($all_videos->take(6) as $all_video)
                         <div class="col-xl-6">
                             <div class="categoryVideo categoryVideo--blue categoryVideo--small">
-                                <a href="#" class="categoryVideo__imgContainer">
-{{--                                    <img src="/img/maths.jpg" class="categoryVideo__img" alt="#">--}}
+                                <a href="{{route('video', [$class, $theme->title, $all_video->id])}}" class="categoryVideo__imgContainer">
                                     {!! $all_video->video_frame !!}
                                     <span class="categoryVideo__play"></span>
-                                    <span class="categoryVideo__class">7</span>
+                                    <span class="categoryVideo__class">
+                                        @foreach($groups as $group)
+                                            @if($group['id'] == $all_video['class_id'])
+                                                {{$group['number']}}
+                                            @endif
+                                        @endforeach
+                                    </span>
                                 </a>
-                                <h3 class="categoryVideo__title"><a href="#" class="categoryVideo__title-link">{{$all_video->title}}</a></h3>
+                                <h3 class="categoryVideo__title"><a href="{{route('video', [$class, $theme->title, $all_video->id])}}" class="categoryVideo__title-link">{{$all_video->title}}</a></h3>
                             </div>
                         </div>
                         @endforeach

@@ -24,7 +24,7 @@
         <div class="container">
             <div class="header__wrapper">
                 <div href="#" class="header__logoContainer">
-                    <a href="#" class="header__logo"><img src="/img/logo.svg" class="header__logo-img" alt="#"></a>
+                    <a href="/" class="header__logo"><img src="/img/logo.svg" class="header__logo-img" alt="#"></a>
                     <span class="header__logoText">
                   <span class="header__logoText-title">МЫ ДАРИМ ЗНАНИЯ!</span>
                   <span class="header__logoText-text">Образовательный проект</span>
@@ -33,21 +33,26 @@
                 <a href="#" class="header__banner"><img src="/img/banner.png" class="header__banner-img" alt="#"></a>
                 <div class="header__right">
                     <div class="socials">
-                        <p class="socials__title">Мы в соц. сетях</p>
+                        <p class="socials__title">Подпишись на нас:</p>
                         <ul class="socials__list">
                             <li class="socials__list-el">
-                                <a href="#" class="socials__list-link">
-                                    <img src="/img/icons/youtube.svg" class="socials__list-img" alt="#">
-                                </a>
-                            </li>
-                            <li class="socials__list-el">
-                                <a href="#" class="socials__list-link">
+                                <a href="https://www.instagram.com/mektep_online_kz/?hl=ru" target="_blank" class="socials__list-link">
                                     <img src="/img/icons/insta.svg" class="socials__list-img" alt="#">
                                 </a>
                             </li>
                             <li class="socials__list-el">
-                                <a href="#" class="socials__list-link">
-                                    <img src="/img/icons/tg.svg" class="socials__list-img" alt="#">
+                                <a href="https://www.facebook.com/Mektep-OnLine-105124131072854/?modal=admin_todo_tour&_rdc=1&_rdr" target="_blank" class="socials__list-link">
+                                    <img src="/img/icons/facebook.svg" class="socials__list-img" alt="#">
+                                </a>
+                            </li>
+                            <li class="socials__list-el">
+                                <a href="https://vk.com/public191962382" target="_blank" class="socials__list-link">
+                                    <img src="/img/icons/vk.svg" class="socials__list-img" alt="#">
+                                </a>
+                            </li>
+                            <li class="socials__list-el">
+                                <a href="https://tiktok.com/@mektep_online_kz" target="_blank" class="socials__list-link">
+                                    <img src="/img/icons/tt.svg" class="socials__list-img" alt="#">
                                 </a>
                             </li>
                         </ul>
@@ -106,82 +111,6 @@
                 </div>
                 @endforeach
 
-
-{{--                <div class="categoriesList__el categoriesList__el--turquoise categoriesList__el--biology">--}}
-{{--                    <div class="dropdown">--}}
-{{--                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                            <span class="dropdown__toggle-title">Биология</span>--}}
-{{--                        </button>--}}
-{{--                        <div class="dropdown-menu">--}}
-{{--                            <a class="dropdown-item active" href="#">7 класс</a>--}}
-{{--                            <a class="dropdown-item" href="#">8 класс</a>--}}
-{{--                            <a class="dropdown-item" href="#">9 класс</a>--}}
-{{--                            <a class="dropdown-item" href="#">10 класс</a>--}}
-{{--                            <a class="dropdown-item" href="#">11 класс</a>--}}
-{{--                            <a class="dropdown-item" href="#">12 класс</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="categoriesList__el  categoriesList__el--red categoriesList__el--maths">--}}
-{{--                    <div class="dropdown">--}}
-{{--                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                            <span class="dropdown__toggle-title">Математика</span>--}}
-{{--                        </button>--}}
-{{--                        <div class="dropdown-menu">--}}
-{{--                            <a class="dropdown-item" href="#">7 класс</a>--}}
-{{--                            <a class="dropdown-item" href="#">8 класс</a>--}}
-{{--                            <a class="dropdown-item" href="#">9 класс</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="categoriesList__el categoriesList__el--violet categoriesList__el--chemistry">--}}
-{{--                    <div class="dropdown">--}}
-{{--                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                            <span class="dropdown__toggle-title">Химия</span>--}}
-{{--                        </button>--}}
-{{--                        <div class="dropdown-menu">--}}
-{{--                            <a class="dropdown-item" href="#">7 класс</a>--}}
-{{--                            <a class="dropdown-item" href="#">8 класс</a>--}}
-{{--                            <a class="dropdown-item" href="#">9 класс</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="categoriesList__el  categoriesList__el--blue categoriesList__el--physics">--}}
-{{--                    <div class="dropdown">--}}
-{{--                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                            <span class="dropdown__toggle-title">Физика</span>--}}
-{{--                        </button>--}}
-{{--                        <div class="dropdown-menu">--}}
-{{--                            <a class="dropdown-item" href="#">7 класс</a>--}}
-{{--                            <a class="dropdown-item" href="#">8 класс</a>--}}
-{{--                            <a class="dropdown-item" href="#">9 класс</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="categoriesList__el categoriesList__el--pink categoriesList__el--algebra">--}}
-{{--                    <div class="dropdown">--}}
-{{--                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                            <span class="dropdown__toggle-title">Алгебра</span>--}}
-{{--                        </button>--}}
-{{--                        <div class="dropdown-menu">--}}
-{{--                            <a class="dropdown-item" href="#">7 класс</a>--}}
-{{--                            <a class="dropdown-item" href="#">8 класс</a>--}}
-{{--                            <a class="dropdown-item" href="#">9 класс</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="categoriesList__el  categoriesList__el--orange categoriesList__el--geometry">--}}
-{{--                    <div class="dropdown">--}}
-{{--                        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                            <span class="dropdown__toggle-title">Геометрия</span>--}}
-{{--                        </button>--}}
-{{--                        <div class="dropdown-menu">--}}
-{{--                            <a class="dropdown-item" href="#">7 класс</a>--}}
-{{--                            <a class="dropdown-item" href="#">8 класс</a>--}}
-{{--                            <a class="dropdown-item" href="#">9 класс</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
             </div>
 
             <div class="categoriesList__submenu">
