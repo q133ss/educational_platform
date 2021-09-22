@@ -26,14 +26,16 @@
                 <div href="#" class="header__logoContainer">
                     <a href="/" class="header__logo"><img src="/img/logo.svg" class="header__logo-img" alt="#"></a>
                     <span class="header__logoText">
-                  <span class="header__logoText-title">МЫ ДАРИМ ЗНАНИЯ!</span>
-                  <span class="header__logoText-text">Образовательный проект</span>
+                  <span class="header__logoText-title">
+                      @lang('main.string1')
+                  </span>
+                  <span class="header__logoText-text">@lang('main.string2')</span>
                 </span>
                 </div>
                 <a href="#" class="header__banner"><img src="/img/banner.png" class="header__banner-img" alt="#"></a>
                 <div class="header__right">
                     <div class="socials">
-                        <p class="socials__title">Подпишись на нас:</p>
+                        <p class="socials__title">@lang('main.subscribe_us')</p>
                         <ul class="socials__list">
                             <li class="socials__list-el">
                                 <a href="https://www.instagram.com/mektep_online_kz/?hl=ru" target="_blank" class="socials__list-link">
@@ -59,11 +61,11 @@
                     </div>
                     <div class="languageList">
                         <div class="dropdown">
-                            <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Рус</button>
+                            <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> @php echo session('lang_code'); @endphp</button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item active" href="#">Рус</a>
-                                <a class="dropdown-item" href="#">Kaz</a>
-                                <a class="dropdown-item" href="#">Eng</a>
+                                <a class="dropdown-item @if(session('locale') == "ru") active @endif " href="{{ route('changeLang', 'ru') }}">Рус</a>
+                                <a class="dropdown-item @if(session('locale') == "kz") active @endif " href="{{ route('changeLang', 'kz') }}">Kaz</a>
+                                <a class="dropdown-item @if(session('locale') == "en") active @endif " href="{{ route('changeLang', 'en') }}">Eng</a>
                             </div>
                         </div>
                     </div>
@@ -78,7 +80,7 @@
 
             <form class="searchForm" action="{{route('search')}}" method="GET">
                 <button type="submit" class="searchForm__button"></button>
-                <input type="text" id="s" @if(isset(request()->search)) value="{{request()->search}}" @endif name="search" class="searchForm__input" placeholder="Поиск уроков..." required>
+                <input type="text" id="s" @if(isset(request()->search)) value="{{request()->search}}" @endif name="search" class="searchForm__input" placeholder="@lang('main.find_les')" required>
             </form>
             <button class="catalogToggle" type="button">
               <span class="catalogToggle__bar">
@@ -86,7 +88,7 @@
                 <span></span>
                 <span></span>
               </span>
-                <span class="catalogToggle__text">Каталог знаний</span>
+                <span class="catalogToggle__text">@lang('Knowledge catalog')</span>
             </button>
         </div>
     </header>
@@ -115,17 +117,17 @@
 
             <div class="categoriesList__submenu">
                 <div class="languageList">
-                    <div class="languageList__title">Язык</div>
+                    <div class="languageList__title">@lang('main.lang')</div>
                     <div class="dropdown">
                         <div class="dropdown-menu">
-                            <a class="dropdown-item active" href="#">Рус</a>
-                            <a class="dropdown-item" href="#">Kaz</a>
-                            <a class="dropdown-item" href="#">Eng</a>
+                            <a class="dropdown-item @if(session('locale') == "ru") active @endif " href="{{route('changeLang', 'ru')}}">Рус</a>
+                            <a class="dropdown-item @if(session('locale') == "kz") active @endif " href="{{ route('changeLang', 'kz') }}">Kaz</a>
+                            <a class="dropdown-item @if(session('locale') == "en") active @endif " href="{{ route('changeLang', 'en') }}">Eng</a>
                         </div>
                     </div>
                 </div>
                 <div class="socials">
-                    <p class="socials__title">Мы в соц. сетях</p>
+                    <p class="socials__title">@lang('main.subscribe_us')</p>
                     <ul class="socials__list">
                         <li class="socials__list-el">
                             <a href="#" class="socials__list-link">

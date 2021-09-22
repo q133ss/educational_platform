@@ -20,13 +20,13 @@
             <div class="col-xl-5  col-lg-5">
                 <div class="footer__infoContainer">
                     <div class="footer__info">
-                        <h5 class="footer__info-title">Наш адрес</h5>
+                        <h5 class="footer__info-title">@lang('main.our_adress')</h5>
                         <div class="footer__info-body">
-                            <a href="https://goo.gl/maps/9FqCLUmsqxmCWydGA" target="_blank" class="footer__info-el">г. Алматы, Наурызбай<br>батыра, 65</a>
+                            <a href="https://goo.gl/maps/9FqCLUmsqxmCWydGA" target="_blank" class="footer__info-el">@lang('main.adress_str1')<br>@lang('main.adress_str2')</a>
                         </div>
                     </div>
                     <div class="footer__info">
-                        <h5 class="footer__info-title">Для ВОПРОСОВ и ПРЕДЛОЖЕНИЙ</h5>
+                        <h5 class="footer__info-title">@lang('main.for_quest')</h5>
                         <div class="footer__info-body">
                             <a href="tel:+77273455456" class="footer__info-el">
                                 +7 701 302 78 94

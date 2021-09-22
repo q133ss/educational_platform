@@ -9,6 +9,9 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\Theme;
 
+use Illuminate\Support\Facades\App;
+
+
 class IndexController extends Controller
 {
     /*
@@ -48,5 +51,18 @@ class IndexController extends Controller
             'cat_title' => $cat_title,
             'themes' => $themes
         ]);
+    }
+
+    public function changeLocale($lang){
+        session(['locale' => $lang]);
+        App::setLocale($lang);
+        if($lang == 'ru'){
+            session(['lang_code' => 'Рус']);
+        }elseif($lang == 'kz'){
+            session(['lang_code' => 'Kaz']);
+        }elseif($lang == 'en'){
+            session(['lang_code' => 'Eng']);
+        }
+        return redirect()->back();
     }
 }

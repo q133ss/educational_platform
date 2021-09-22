@@ -190,6 +190,15 @@
                         </ul>
                     </li>
 
+                    <li class="nav-item">
+                        <a href="{{route('docs')}}" class="nav-link">
+                            <p>
+                                <i class="nav-icon far fa-file"></i>
+                                Документация
+                            </p>
+                        </a>
+                    </li>
+
 
 {{--                    <li class="nav-item">--}}
 {{--                        <a href="#" class="nav-link">--}}

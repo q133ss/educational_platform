@@ -9,7 +9,7 @@
             <h2 class="pageTitle">
                 {{$page_title['title']}}
                 <span class="pageTitle__additional">
-            <span class="pageTitle__additional-el">{{$class}} класс</span>
+            <span class="pageTitle__additional-el">{{$class}} @lang('main.class')</span>
           </span>
             </h2>
             <h2 class="pageTitle fw800">
@@ -25,7 +25,7 @@
                             @break
                         @endforeach
                     </div>
-                    <h3 class="pageSubtitle d-lg-none d-block">Похожие темы:</h3>
+                    <h3 class="pageSubtitle d-lg-none d-block">@lang('related_themes')</h3>
                     <div class="owl-carousel catalogCarousel">
                         @foreach($videos as $video)
                             <div class="categoryVideo categoryVideo--blue categoryVideo--small">

@@ -1,5 +1,5 @@
 <?php
-namespace App\Filters;
+namespace App\filters;
 
 class VideoFilter extends QueryFilter{
     public function class_id($id){

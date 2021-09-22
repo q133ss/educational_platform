@@ -8,19 +8,19 @@
                     <h2 class="pageTitle">
                         {{$sub}}
                         <span class="pageTitle__additional">
-                <span class="pageTitle__additional-el">{{$class}} класс</span>
+                <span class="pageTitle__additional-el">{{$class}} @lang('main.class')</span>
               </span>
                     </h2>
                     <div class="searchResults">
                         @if(count($themes) == 0)
-                            <p>Тем не найдено</p>
+                            <p>@lang('main.theme_not_founded')</p>
                         @endif
                         @foreach($themes as $theme)
                             @foreach($groups as $group)
                                 @if($group->id == $theme->class_id)
                             <a class="searchResults__el searchResults__el--blue" href="{{route('catalog', [$class, $theme->id])}}">
                                 <span class="searchResults__el-title">{{$theme->title}}</span>
-                                <span class="searchResults__el-class">{{$group->number}} класс</span>
+                                <span class="searchResults__el-class">{{$group->number}} @lang('main.class')</span>
                             </a>
                                     @endif
                                 @endforeach
