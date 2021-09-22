@@ -9,19 +9,29 @@
             <h2 class="pageTitle">
                 {{$page_title['title']}}
                 <span class="pageTitle__additional">
-            <span class="pageTitle__additional-el">{{$class}} класс</span>
+            <span class="pageTitle__additional-el">{{$class}} @lang('main.class')</span>
           </span>
             </h2>
             <h2 class="pageTitle fw800">
-                Тема: {{$theme['title']}}
+                @lang('main.theme') {{$theme['title']}}
             </h2>
             <div class="row">
                 <div class="col-xl-8 col-lg-9">
                     <div class="videoBlock videoBlock--blue">
                             {!! $video->video_frame !!}
+                        @if(session('locale') == "ru")
                             <div class="videoBlock__text">{{$video->title}}</div>
+                        @endif
+
+                        @if(session('locale') == "en")
+                            <div class="videoBlock__text">{{$video->title_en}}</div>
+                        @endif
+
+                        @if(session('locale') == "kz")
+                            <div class="videoBlock__text">{{$video->title_kz}}</div>
+                        @endif
                     </div>
-                    <h3 class="pageSubtitle d-lg-none d-block">Похожие темы:</h3>
+                    <h3 class="pageSubtitle d-lg-none d-block">@lang('main.related_themes')</h3>
                     <div class="owl-carousel catalogCarousel">
                         @foreach($videos as $video)
                             <div class="categoryVideo categoryVideo--blue categoryVideo--small">
@@ -30,7 +40,17 @@
                                     <span class="categoryVideo__play"></span>
                                     <span class="categoryVideo__class">7</span>
                                 </a>
+                                @if(session('locale') == "ru")
                                 <h3 class="categoryVideo__title"><a href="{{route('video', [$class, $theme['title'], $video->id])}}" class="categoryVideo__title-link">{{$video->title}}</a></h3>
+                                @endif
+
+                                @if(session('locale') == "en")
+                                    <h3 class="categoryVideo__title"><a href="{{route('video', [$class, $theme['title'], $video->id])}}" class="categoryVideo__title-link">{{$video->title_en}}</a></h3>
+                                @endif
+
+                                @if(session('locale') == "kz")
+                                    <h3 class="categoryVideo__title"><a href="{{route('video', [$class, $theme['title'], $video->id])}}" class="categoryVideo__title-link">{{$video->title_kz}}</a></h3>
+                                @endif
                             </div>
                         @endforeach
 
@@ -46,7 +66,17 @@
                                         <span class="categoryVideo__play"></span>
                                         <span class="categoryVideo__class">7</span>
                                     </a>
+                                    @if(session('locale') == "ru")
                                     <h3 class="categoryVideo__title"><a href="{{route('video', [$class, $theme['title'], $all_video->id])}}" class="categoryVideo__title-link">{{$all_video->title}}</a></h3>
+                                    @endif
+
+                                    @if(session('locale') == "en")
+                                        <h3 class="categoryVideo__title"><a href="{{route('video', [$class, $theme['title'], $all_video->id])}}" class="categoryVideo__title-link">{{$all_video->title_en}}</a></h3>
+                                    @endif
+
+                                    @if(session('locale') == "kz")
+                                        <h3 class="categoryVideo__title"><a href="{{route('video', [$class, $theme['title'], $all_video->id])}}" class="categoryVideo__title-link">{{$all_video->title_kz}}</a></h3>
+                                    @endif
                                 </div>
                             </div>
                         @endforeach

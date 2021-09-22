@@ -11,7 +11,17 @@
                                 <img src="{{$cat->picture}}" class="categoryVideo__img" alt="#">
                                 <span class="categoryVideo__play" data-toggle="modal" data-target="#categoryModal{{$cat->id}}"></span>
                             </a>
+                            @if(session('locale') == "ru")
                             <h3 class="categoryVideo__title"><a href="{{route('category', [$cat->title])}}" class="categoryVideo__title-link">{{$cat->title}}</a></h3>
+                            @endif
+
+                            @if(session('locale') == "en")
+                                <h3 class="categoryVideo__title"><a href="{{route('category', [$cat->title])}}" class="categoryVideo__title-link">{{$cat->title_en}}</a></h3>
+                            @endif
+
+                            @if(session('locale') == "kz")
+                                <h3 class="categoryVideo__title"><a href="{{route('category', [$cat->title])}}" class="categoryVideo__title-link">{{$cat->title_kz}}</a></h3>
+                            @endif
                         </div>
                     </div>
                 @endforeach

@@ -13,4 +13,6 @@ return [
     'theme_not_founded' => 'Тем не найдено',
     'class' => 'Класс',
     'related_themes' => 'Похожие темы:',
+    'select_class' => 'Выберите нужный класс',
+    'theme' => 'Тема:',
 ];

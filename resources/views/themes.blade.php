@@ -6,7 +6,17 @@
             <div class="row">
                 <div class="col-xl-8 col-lg-8">
                     <h2 class="pageTitle">
-                        {{$sub}}
+                        @if(session('locale') == 'ru')
+                            {{$sub}}
+                        @endif
+
+                        @if(session('locale') == 'en')
+                            {{$cat_lang['title_en']}}
+                        @endif
+
+                        @if(session('locale') == 'kz')
+                            {{$cat_lang['title_kz']}}
+                        @endif
                         <span class="pageTitle__additional">
                 <span class="pageTitle__additional-el">{{$class}} @lang('main.class')</span>
               </span>
@@ -19,7 +29,15 @@
                             @foreach($groups as $group)
                                 @if($group->id == $theme->class_id)
                             <a class="searchResults__el searchResults__el--blue" href="{{route('catalog', [$class, $theme->id])}}">
+                                @if(session('locale') == "ru")
                                 <span class="searchResults__el-title">{{$theme->title}}</span>
+                                @endif
+                                @if(session('locale') == "en")
+                                    <span class="searchResults__el-title">{{$theme->title_en}}</span>
+                                @endif
+                                @if(session('locale') == "kz")
+                                    <span class="searchResults__el-title">{{$theme->title_kz}}</span>
+                                @endif
                                 <span class="searchResults__el-class">{{$group->number}} @lang('main.class')</span>
                             </a>
                                     @endif

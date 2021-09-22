@@ -41,6 +41,8 @@ class CategoryController extends Controller
     {
         $new_category = new Category();
         $new_category->title = $request->title;
+        $new_category->title_en = $request->title_en;
+        $new_category->title_kz = $request->title_kz;
         $new_category->video_code = $request->video_code;
         $path = $request->file('picture')->store('uploads', 'public');
         $new_category->picture = '/storage/'.$path;
@@ -84,6 +86,11 @@ class CategoryController extends Controller
     {
         $category->title = $request->title;
         $category->video_code = $request->video_code;
+        $category->title_en = $request->title_en;
+        $category->title_kz = $request->title_kz;
+        $path = $request->file('picture')->store('uploads', 'public');
+        $category->picture = '/storage/'.$path;
+
         $category->save();
         return redirect()->back()->withSuccess('Предмет обновлен!');
     }

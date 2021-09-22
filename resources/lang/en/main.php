@@ -11,6 +11,8 @@ return [
     'adress_str2' => 'batyr, 65',
     'for_quest' => 'For QUESTIONS and SUGGESTIONS',
     'theme_not_founded' => 'No topics found',
-    'class' => 'класс',
+    'class' => 'Class',
     'related_themes' => 'Related topics:',
+    'select_class' => 'Select the class you want',
+    'theme' => 'Theme:',
 ];

@@ -33,8 +33,18 @@
                     @method('PUT')
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Имя</label>
+                            <label for="exampleInputEmail1">Название</label>
                             <input type="text" class="form-control" value="{{$post->title}}" id="exampleInputEmail1" name="title" placeholder="Введите имя предмета" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Название на английском <small>(Можно оставить пустым)</small></label>
+                            <input type="text" class="form-control" value="{{$post->title_en}}" id="exampleInputEmail1" name="title_en" placeholder="Введите название урока">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Название на казахском <small>(Можно оставить пустым)</small></label>
+                            <input type="text" class="form-control" value="{{$post->title_kz}}" id="exampleInputEmail1" name="title_kz" placeholder="Введите название урока">
                         </div>
 
                         <div class="form-group">

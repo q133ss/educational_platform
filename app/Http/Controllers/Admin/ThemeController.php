@@ -48,6 +48,8 @@ class ThemeController extends Controller
     {
         $theme = new Theme();
         $theme->title = $request->title;
+        $theme->title_en = $request->title_en;
+        $theme->title_kz = $request->title_kz;
         $theme->cat_id = $request->cat_id;
         $theme->class_id = $request->class_id;
 
@@ -94,6 +96,8 @@ class ThemeController extends Controller
     public function update(Request $request, Theme $theme)
     {
         $theme->title = $request->title;
+        $theme->title_en = $request->title_en;
+        $theme->title_kz = $request->title_kz;
         $theme->cat_id = $request->cat_id;
         $theme->class_id = $request->class_id;
         $theme->save();

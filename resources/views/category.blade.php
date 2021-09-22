@@ -6,16 +6,26 @@
             <div class="row">
                 <div class="col-xl-8 col-lg-8">
                     <h2 class="pageTitle">
-                        {{$sub}}
+                        @if(session('locale') == 'ru')
+                            {{$sub}}
+                        @endif
+
+                        @if(session('locale') == 'en')
+                                {{$cat_lang['title_en']}}
+                        @endif
+
+                        @if(session('locale') == 'kz')
+                            {{$cat_lang['title_kz']}}
+                        @endif
                     </h2>
                     <div class="searchResults">
-                        <p>Выберите нужный класс</p>
+                        <p>@lang('main.select_class')</p>
                         @if(count($groups) == 0)
-                            <p>Тем не найдено</p>
+                            <p>@lang('main.theme_not_founded')</p>
                         @endif
                         @foreach($groups as $group)
                             <a class="searchResults__el searchResults__el--blue" href="{{route('themes', [$sub, $group->number])}}">
-                                <span class="searchResults__el-title">{{$group->number}} класс</span>
+                                <span class="searchResults__el-title">{{$group->number}} @lang('main.class')</span>
                             </a>
                         @endforeach
                     </div>

@@ -37,6 +37,16 @@
                            </div>
 
                            <div class="form-group">
+                               <label for="exampleInputEmail1">Название на английском <small>(Можно оставить пустым)</small></label>
+                               <input type="text" class="form-control" id="exampleInputEmail1" name="title_en" placeholder="Введите название урока">
+                           </div>
+
+                           <div class="form-group">
+                               <label for="exampleInputEmail1">Название на казахском <small>(Можно оставить пустым)</small></label>
+                               <input type="text" class="form-control" id="exampleInputEmail1" name="title_kz" placeholder="Введите название урока">
+                           </div>
+
+                           <div class="form-group">
                                <!-- <label for="customFile">Custom File</label> -->
                                <strong>Изображение</strong>
                                <div class="custom-file mt-2">

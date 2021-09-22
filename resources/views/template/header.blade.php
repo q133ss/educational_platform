@@ -102,11 +102,21 @@
                 <div class="categoriesList__el categoriesList__el--turquoise categoriesList__el--biology">
                     <div class="dropdown">
                         <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @if(session('locale') == "ru")
                             <span class="dropdown__toggle-title">{{$cat->title}}</span>
+                            @endif
+
+                            @if(session('locale') == "en")
+                                <span class="dropdown__toggle-title">{{$cat->title_en}}</span>
+                            @endif
+
+                            @if(session('locale') == "kz")
+                                <span class="dropdown__toggle-title">{{$cat->title_kz}}</span>
+                            @endif
                         </button>
                         <div class="dropdown-menu">
                             @foreach($groups as $group)
-                            <a class="dropdown-item active" href="{{route('themes', [$cat->title, $group->number])}}">{{$group->number}} класс</a>
+                            <a class="dropdown-item active" href="{{route('themes', [$cat->title, $group->number])}}">{{$group->number}} @lang('main.class')</a>
                             @endforeach
                         </div>
                     </div>

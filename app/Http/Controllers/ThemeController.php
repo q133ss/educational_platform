@@ -17,6 +17,8 @@ class ThemeController extends Controller
         $themes = Theme::where('cat_id', $cat->id)->where('class_id', $class_id->id)->paginate(10);
         $video = Post::where('cat_id', $cat->id)->inRandomOrder()->first(); //Random video
 
+        $cat_lang = Category::where('title', $sub)->first();
+
         //For header
         $categories = Category::get();
         $groups = Group::get();
@@ -27,7 +29,8 @@ class ThemeController extends Controller
             'categories' => $categories,
             'groups' => $groups,
             'themes' => $themes,
-            'video' => $video
+            'video' => $video,
+            'cat_lang' => $cat_lang
         ]);
     }
 
@@ -35,7 +38,9 @@ class ThemeController extends Controller
         $groups = Group::paginate(10);
 
         $cat = Category::where('title', $sub)->first();
-        $video = Post::where('cat_id', $cat->id)->inRandomOrder()->first();
+        $video = Post::where('cat_id', $cat['id'])->inRandomOrder()->first();
+
+        $cat_lang = Category::where('title', $sub)->first();
 
         $themes = Theme::get();
 
@@ -45,7 +50,8 @@ class ThemeController extends Controller
             'sub' => $sub,
             'groups' => $groups,
             'video' => $video,
-            'themes' => $themes
+            'themes' => $themes,
+            'cat_lang' => $cat_lang
         ]);
     }
 }

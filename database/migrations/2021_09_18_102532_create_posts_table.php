@@ -16,10 +16,12 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('title_kz')->nullable();
+            $table->string('title_en')->nullable();
             $table->text('video_frame');
-            $table->bigInteger('cat_id')->unsigned();
-            $table->bigInteger('class_id')->unsigned();
-            $table->bigInteger('theme_id')->unsigned();
+            $table->bigInteger('cat_id')->unsigned()->nullable();
+            $table->bigInteger('class_id')->unsigned()->nullable();
+            $table->bigInteger('theme_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }

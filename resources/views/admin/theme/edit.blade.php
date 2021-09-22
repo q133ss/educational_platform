@@ -38,6 +38,16 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="exampleInputEmail1">Название на английском <small>(Можно оставить пустым)</small></label>
+                            <input type="text" class="form-control" value="{{$theme->title_en}}" id="exampleInputEmail1" name="title_en" placeholder="Введите название урока">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Название на казахском <small>(Можно оставить пустым)</small></label>
+                            <input type="text" class="form-control" value="{{$theme->title_kz}}" id="exampleInputEmail1" name="title_kz" placeholder="Введите название урока">
+                        </div>
+
+                        <div class="form-group">
                             <label>Изменить предмет</label>
                             <select class="form-control" name="cat_id">
                                 @foreach($categories as $cat)
@@ -56,7 +66,7 @@
                         </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Добавить</button>
+                            <button type="submit" class="btn btn-primary">Обновить</button>
                         </div>
                 </form>
             </div>

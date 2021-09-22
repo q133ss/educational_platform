@@ -32,8 +32,18 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Название</label>
+                            <label for="exampleInputEmail1">Название на русском</label>
                             <input type="text" class="form-control" id="exampleInputEmail1" name="title" placeholder="Введите название темы" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Название на английском <small>(Можно оставить пустым)</small></label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="title_en" placeholder="Введите название урока">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Название на казахском <small>(Можно оставить пустым)</small></label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="title_kz" placeholder="Введите название урока">
                         </div>
 
                         <div class="form-group">

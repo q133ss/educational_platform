@@ -51,6 +51,8 @@ class PostController extends Controller
     {
         $post = new Post();
         $post->title = $request->title;
+        $post->title_kz = $request->title_kz;
+        $post->title_en = $request->title_en;
         $post->cat_id = $request->cat_id;
         $post->class_id = $request->class_id;
         $post->video_frame = $request->video_code;
@@ -101,6 +103,8 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $post->title = $request->title;
+        $post->title_kz = $request->title_kz;
+        $post->title_en = $request->title_en;
         $post->cat_id = $request->cat_id;
         $post->video_frame = $request->video_code;
         $post->class_id = $request->class_id;
