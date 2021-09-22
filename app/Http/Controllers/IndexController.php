@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Filters\VideoFilter;
+use App\filters\VideoFilter;
 use App\Models\Group;
 use Illuminate\Http\Request;
 use App\Models\Category;

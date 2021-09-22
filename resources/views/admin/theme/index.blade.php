@@ -58,7 +58,7 @@
                                         </i>
                                         Изменить
                                     </a>
-                                    <form action="{{route('group.destroy', $theme->id) }}" class="btn" method="POST">
+                                    <form action="{{route('theme.destroy', $theme->id) }}" class="btn" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm delete-btn" href="#">

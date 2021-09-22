@@ -108,6 +108,7 @@ class ThemeController extends Controller
      */
     public function destroy(Theme $theme)
     {
-        //
+        $theme->delete();
+        return redirect()->back()->withSuccess('Тема успешно удалена!');
     }
 }
