@@ -22,6 +22,7 @@ class IndexController extends Controller
         $video = Post::orderBy('created_at', 'DESC')->get();
         $cat = Category::orderBy('created_at', 'DESC')->get();
         $group = Group::orderBy('number', 'ASC')->get();
+
         return view('index',[
             'video' => $video,
             'categories' => $cat,

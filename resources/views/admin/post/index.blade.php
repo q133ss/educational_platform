@@ -54,9 +54,11 @@
                                 <td>
                                     {{$post->title}}
                                 </td>
-
-                                <td>{{$post->category['title']}}</td>
-
+                                <td>
+                                @if(isset($post->category['title']))
+                                {{$post->category['title']}}
+                                @endif
+                                </td>
                                 <td>{{$post->created_at}}</td>
 
                                 <td class="project-actions text-right">

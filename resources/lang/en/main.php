@@ -15,4 +15,9 @@ return [
     'related_themes' => 'Related topics:',
     'select_class' => 'Select the class you want',
     'theme' => 'Theme:',
+    'refults_for' => 'Results for:',
+    'no_results' => 'No results were found for your search.',
+    'try_changing' => 'Try changing your keywords or adjusting your filter.',
+    'by_class' => 'By class',
+    'on_sub' => 'On subjects',
 ];

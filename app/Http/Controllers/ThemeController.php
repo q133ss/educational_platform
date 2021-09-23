@@ -35,7 +35,7 @@ class ThemeController extends Controller
     }
 
     public function category($sub){
-        $groups = Group::paginate(10);
+        $groups = Group::orderBy('number')->paginate(10);
 
         $cat = Category::where('title', $sub)->first();
         $video = Post::where('cat_id', $cat['id'])->inRandomOrder()->first();

@@ -5,6 +5,9 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Session;
+
 
 class SetLocale
 {
@@ -17,7 +20,12 @@ class SetLocale
      */
     public function handle(Request $request, Closure $next)
     {
-        App::setLocale(session('locale'));
+        if (Session::has('locale')) {
+            App::setLocale(session('locale'));
+        }else{
+            session(['locale' => 'ru']);
+            session(['lang_code' => 'Рус']);
+        }
         return $next($request);
     }
 }
